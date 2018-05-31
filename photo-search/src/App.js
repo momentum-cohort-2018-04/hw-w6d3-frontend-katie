@@ -7,7 +7,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      
+      images: []
     }
   }
 
@@ -15,18 +15,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>{images[0]}</p>
+        <p>{this.state.images}</p>
+        <button onClick={this.getimages.bind(this)}>Read More!</button>
       </div>
     );
   }
+
+
+  getimages(){
+    request.get(`https://pixabay.com/api/?key=${process.env.REACT_APP_SECRET_CODE}&q=('red')`)
+    .then(response => {
+       this.setState({
+        images : response.body.hits[0].user
+      })
+      console.log(this.state.images)
+  })
+// }
+}
 }
 
-
-  request.get(`https://pixabay.com/api/?key=${process.env.REACT_APP_SECRET_CODE}&q=('red')`)
-  .then(response => {
-     const images = response.body.hits
-  })
-
-
+class Image extends Component {
+  constructor () {
+    super()
+    this.state = {
+    }
+}
 
 export default App;
