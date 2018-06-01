@@ -25,7 +25,7 @@ class App extends Component {
         {/* <p>{this.state.images.user}</p>
         <img src = {this.state.images.previewURL}/>
         <p>{this.state.images.tags}</p> */}
-        <div className = "image-container">
+        <div className= "image-container">
         {images.map(function(image){
           return <Image image={image} q={text}/>
         })}
@@ -69,14 +69,30 @@ expandPic(){
   render(){
     console.log(this.props)
   return (
+    <div>
     <div className="imageWithInfo">
         <p>Contributor: <strong>{this.props.image.user}</strong></p>
         <img onClick ={this.expandPic.bind(this)} src = {this.props.image.previewURL}/>
         <p>Tags: <strong>{this.props.image.tags}</strong></p>
     </div>
+    {this.state.expanded && <div>
+    {/* img on click goes to expandPic */}
+    <img onClick = {this.expandPic.bind(this)} className = 'big-photo' src = {this.props.image.largeImageURL}/>
+    <BigPhoto expanded = {this.state.expanded}/>
+    </div>}
+    </div>
   )
   
 }
+}
+
+class BigPhoto extends Component {
+  render() {
+    const expanded = this.props.expanded
+  return (
+    <div>HELLO</div>
+  )
+  }
 }
 
 export default App;
