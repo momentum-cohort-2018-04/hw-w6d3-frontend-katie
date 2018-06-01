@@ -25,10 +25,11 @@ class App extends Component {
         {/* <p>{this.state.images.user}</p>
         <img src = {this.state.images.previewURL}/>
         <p>{this.state.images.tags}</p> */}
-        
+        <div className = "image-container">
         {images.map(function(image){
           return <Image image={image} q={text}/>
         })}
+        </div>
       </div>
     );
   }
@@ -53,15 +54,25 @@ searchTextUpdate (event) {
 class Image extends Component {
   constructor () {
     super()
-    
+    this.state = {
+      expanded: false
+    }
 }
+
+expandPic(){
+  this.setState({
+    expanded : !this.state.expanded
+  })
+  console.log(this.state.expanded)
+}
+
   render(){
     console.log(this.props)
   return (
-    <div className="image-container">
-        <p>{this.props.image.user}</p>
-        <img src = {this.props.image.previewURL}/>
-        <p>{this.props.image.tags}</p>
+    <div className="imageWithInfo">
+        <p>Contributor: <strong>{this.props.image.user}</strong></p>
+        <img onClick ={this.expandPic.bind(this)} src = {this.props.image.previewURL}/>
+        <p>Tags: <strong>{this.props.image.tags}</strong></p>
     </div>
   )
   
