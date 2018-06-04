@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+.App {
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.film-border {
+  border-top:10px solid black;
+  border-bottom:10px solid black;
+  padding:0;
+  margin:0 0 0 0;
+}
+
+.image-container{
+  /* width: 600px; */
+  display:flex;
+  overflow:scroll;
+  border-top: 10px dashed black;
+  border-bottom:10px dashed black;
+  background-color:black;
+  display:flex;
+  align-items:center;
+  color:whitesmoke;
+
+}
+.big-photo{
+  padding-top:10px;
+  height:500px;
+}
+
+.thumbnail{
+  /* border: 2px solid white; */
+  margin-top: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height:100px;
+
+  
+}
+.thumbnail:hover{
+  opacity:.6;
+}
+
+.imageWithInfo{
+  padding:5px;
+  height:100%;
+  width : 200px;
+  
+}
+
+.more-info{
+  display:flex;
+  justify-content:center;
+  padding:5px;
+}
+.more-info-item{
+  margin:0 5px 0 5px;
+}
+
+h1{
+  margin-bottom:0;
+  margin-top:0;
+  padding:5px 15px 5px 15px;
+  /* color:whitesmoke;
+  background-color:black; */
+}
+
+.subtitle{
+  background-color:black;
+  color:whitesmoke;
+}
+
+.form{
+  margin:0;
+  /* background-color:black;
+  color:whitesmoke; */
+  
+}
+
+
+.button{
+  margin:5px 10px 5px 10px;
+  /* border-bottom:3px solid whitesmoke; */
+}
+
+a{
+  text-decoration: none;
+}
